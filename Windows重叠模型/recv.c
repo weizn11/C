@@ -37,7 +37,7 @@ int cleanup_client_connection(int ThreadIndex,int EventIndex)
         while(IO_Operation_Node_Pointer->next!=NULL && IO_Operation_Node_Pointer->next!=IO_Operation_Last_Pointer)
             IO_Operation_Node_Pointer=IO_Operation_Node_Pointer->next;
 
-        if(IO_Operation_Node_Pointer->next==NULL)
+        if(IO_Operation_Node_Pointer==IO_Operation_Data_Header && ListenThreads==1)
         {
             free(IO_Operation_Data_Header);
             IO_Operation_Data_Header=NULL;
@@ -61,7 +61,8 @@ DWORD WINAPI recv_message_from_client(LPVOID Parameter)
 
     EnterCriticalSection(&CS_ListenThreads);
     ListenThreads++;
-    i=ThreadIndex=ListenThreads;
+    i=ThreadIndex=*(int *)Parameter;
+    free(Parameter);
     LeaveCriticalSection(&CS_ListenThreads);
 
     IO_Operation_Node_Pointer=IO_Operation_Data_Header;

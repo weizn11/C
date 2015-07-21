@@ -3,7 +3,7 @@
 
 #include <winsock2.h>
 
-#define SERVER_LISTEN_PORT 9999       //服务器监听端口
+#define SERVER_LISTEN_PORT 7437       //服务器监听端口
 #define MAX_SIZE 65535
 
 typedef struct _IO_OPERATION_DATA_

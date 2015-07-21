@@ -116,7 +116,13 @@ DWORD WINAPI listen_client(LPVOID Parameter)
         if((TotalConnection-1)%MAXIMUM_WAIT_OBJECTS==0)
         {
             //创建新的监听线程
-            CloseHandle(CreateThread(NULL,0,recv_message_from_client,NULL,0,NULL));
+            if((ListenThreadParameter=(int *)malloc(sizeof(int)))==NULL)
+            {
+                LeaveCriticalSection(&CS_ClientList);
+                continue;
+            }
+            *ListenThreadParameter=ListenThreads+1;
+            CloseHandle(CreateThread(NULL,0,recv_message_from_client,(LPVOID)ListenThreadParameter,0,NULL));
         }
         printf("Client \"%s\" online.TotalConnect:%d\n",inet_ntoa(ClientAddress.sin_addr),TotalConnection);
         LeaveCriticalSection(&CS_ClientList);

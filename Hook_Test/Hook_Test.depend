@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1435922465 source:e:\c”Ô—‘\hook_test\apihook.cpp
+	"apihook.h"
+
+1435922484 e:\c”Ô—‘\hook_test\apihook.h
+	<windows.h>
+
+1435914769 source:e:\c”Ô—‘\hook_test\main.cpp
+	<iostream>
+	"apihook.h"
+
