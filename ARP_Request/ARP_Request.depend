@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1381157001 source:f:\c”Ô—‘\arp_request\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<windows.h>
+	<pcap.h>
+	<conio.h>
+	<winsock2.h>
+	<iphlpapi.h>
+

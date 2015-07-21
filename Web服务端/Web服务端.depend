@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1364216450 source:c:\documents and settings\administrator\my documents\c语言\web服务端\main.c
+	<stdio.h>
+	<stdlib.h>
+	<winsock2.h>
+
+1391944488 source:f:\c语言\web服务端\main.c
+	<stdio.h>
+	<stdlib.h>
+	<winsock2.h>
+

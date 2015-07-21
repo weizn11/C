@@ -1,0 +1,43 @@
+# depslib dependency file v1.0
+1402818370 source:f:\c语言\回连型远控_客户端_win32\main.cpp
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<direct.h>
+	<winsock2.h>
+	<windows.h>
+	<conio.h>
+	<io.h>
+	<direct.h>
+	<shellapi.h>
+	"base64.h"
+	"rc4.h"
+
+1392178920 f:\c语言\回连型远控_客户端_win32\base64.h
+	<stdio.h>
+	<string.h>
+
+1394011044 f:\c语言\回连型远控_客户端_win32\rc4.h
+
+1402819655 source:e:\c语言\回连型远控_客户端_win32\main.cpp
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<direct.h>
+	<winsock2.h>
+	<windows.h>
+	<conio.h>
+	<io.h>
+	<direct.h>
+	<shellapi.h>
+	"base64.h"
+	"rc4.h"
+
+1392178920 e:\c语言\回连型远控_客户端_win32\base64.h
+	<stdio.h>
+	<string.h>
+
+1416069686 e:\c语言\回连型远控_客户端_win32\rc4.h
+

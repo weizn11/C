@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1412236538 source:e:\c”Ô—‘\portmap\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<winsock2.h>
+	<conio.h>
+
+1412236605 source:e:\c”Ô—‘\portmap\linux.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<netinet/in.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<arpa/inet.h>
+	<netinet/if_ether.h>
+

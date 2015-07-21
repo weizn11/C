@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1383276542 source:f:\c”Ô—‘\avl\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<time.h>
+

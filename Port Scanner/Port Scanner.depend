@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1405589715 source:f:\c”Ô—‘\port scanner\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<winsock2.h>
+	<conio.h>
+	<time.h>
+

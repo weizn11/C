@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1431763321 source:e:\c”Ô—‘\thread_class\main.cpp
+	<iostream>
+	"thread.h"
+
+1431763506 source:e:\c”Ô—‘\thread_class\thread.cpp
+	"thread.h"
+
+1431763506 e:\c”Ô—‘\thread_class\thread.h
+	<windows.h>
+

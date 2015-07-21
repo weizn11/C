@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1414682636 source:e:\c语言\重叠模型\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<windows.h>
+	<winsock2.h>
+	<time.h>
+	<conio.h>
+	"global.h"
+	"recv.h"
+
+1414682527 e:\c语言\重叠模型\global.h
+	<winsock2.h>
+
+1414595618 e:\c语言\重叠模型\recv.h
+
+1414682649 source:e:\c语言\重叠模型\recv.c
+	"global.h"
+	"recv.h"
+

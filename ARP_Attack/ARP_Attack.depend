@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1403015336 source:f:\c”Ô—‘\arp_attack\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<windows.h>
+	<pcap.h>
+	<conio.h>
+	<winsock2.h>
+	<iphlpapi.h>
+
+1419864361 source:e:\c”Ô—‘\arp_attack\main.c
+	<stdlib.h>
+	<stdio.h>
+	<pcap.h>
+

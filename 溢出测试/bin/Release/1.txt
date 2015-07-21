@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE items [
+<!ELEMENT items (item*)>
+<!ATTLIST items burpVersion CDATA "">
+<!ATTLIST items exportTime CDATA "">
+<!ELEMENT item (time, url, host, port, protocol, method, path, extension, request, status, responselength, mimetype, response, comment)>
+<!ELEMENT time (#PCDATA)>
+<!ELEMENT url (#PCDATA)>
+<!ELEMENT host (#PCDATA)>
+<!ATTLIST host ip CDATA "">
+<!ELEMENT port (#PCDATA)>
+<!ELEMENT protocol (#PCDATA)>
+<!ELEMENT method (#PCDATA)>
+<!ELEMENT path (#PCDATA)>
+<!ELEMENT extension (#PCDATA)>
+<!ELEMENT request (#PCDATA)>
+<!ATTLIST request base64 (true|false) "false">
+<!ELEMENT status (#PCDATA)>
+<!ELEMENT responselength (#PCDATA)>
+<!ELEMENT mimetype (#PCDATA)>
+<!ELEMENT response (#PCDATA)>
+<!ATTLIST response base64 (true|false) "false">
+<!ELEMENT comment (#PCDATA)>
+]>
+<items burpVersion="1.4.07" exportTime="Sat Oct 18 16:23:27 CST 2014">
+  <item>
+    <time>Sat Oct 18 16:22:19 CST 2014</time>
+    <url><![CDATA[http://210.44.159.4/xsxjxtdl.aspx]]></url>
+    <host ip="210.44.159.4">210.44.159.4</host>
+    <port>80</port>
+    <protocol>http</protocol>
+    <method>POST</method>
+    <path><![CDATA[/xsxjxtdl.aspx]]></path>
+    <extension>aspx</extension>
+    <request base64="true"><![CDATA[UE9TVCAveHN4anh0ZGwuYXNweCBIVFRQLzEuMQ0KQWNjZXB0OiB0ZXh0L2h0bWwsIGFwcGxpY2F0aW9uL3hodG1sK3htbCwgKi8qDQpSZWZlcmVyOiBodHRwOi8vMjEwLjQ0LjE1OS40L3hzeGp4dGRsLmFzcHgNCkFjY2VwdC1MYW5ndWFnZTogZW4tVVMNClVzZXItQWdlbnQ6IE1vemlsbGEvNS4wIChjb21wYXRpYmxlOyBNU0lFIDkuMDsgV2luZG93cyBOVCA2LjE7IFRyaWRlbnQvNS4wKQ0KQ29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi94LXd3dy1mb3JtLXVybGVuY29kZWQNCkFjY2VwdC1FbmNvZGluZzogZ3ppcCwgZGVmbGF0ZQ0KSG9zdDogMjEwLjQ0LjE1OS40DQpDb250ZW50LUxlbmd0aDogMjE2DQpQcm94eS1Db25uZWN0aW9uOiBLZWVwLUFsaXZlDQpQcmFnbWE6IG5vLWNhY2hlDQpDb29raWU6IEFTUC5ORVRfU2Vzc2lvbklkPXRwcHhqeGEzMWdpbngyNTVwMmp0ZWI1NQ0KDQpfX0VWRU5UVEFSR0VUPUJVVFRPTjEmX19FVkVOVEFSR1VNRU5UPSZfX1ZJRVdTVEFURT1kRHd4T1RreE1qWTNNalV3T3pzJTJCUCUyRnJhQjUlMkJrSUdiMWx1ZDd3Q09TaEtnUzBGOCUzRCZfX1ZJRVdTVEFURUdFTkVSQVRPUj01ODEzODAwNyZ0YlNGWkg9NjIwMTAyMTk5MTEyMzQ1Njc4JnRiemt6aD0xMjM0NTU2NyZ0YnhtPSVCOSVGRSVCOSVGRSZSQk5UTD0lRDAlQzIlQzklRkE=]]></request>
+    <status></status>
+    <responselength></responselength>
+    <mimetype></mimetype>
+</items>
