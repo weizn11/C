@@ -1,0 +1,11 @@
+1	ASM	Jack	机械工业出版社	30	
+2	C程序设计	Back	机械工业出版社	20	
+3	VB	Lik	图灵出版社	30	
+4	MSSQL	Mark	图灵出版社	20	
+5	hadoop	Hellen	机械工业出版社	30	
+6	C++	David	图灵出版社	30	
+7	MYSQL	Fax	清华大学出版社	30	
+8	计算机网络	Fifth	清华大学出版社	30	
+9	大学物理	曹刚	清华大学出版社	30	
+10	JAVA	Brek	图灵出版社	30
+11	AutoCAD	sk	机械工业出版社	4
