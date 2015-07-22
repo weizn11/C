@@ -1,8 +1,0 @@
-# depslib dependency file v1.0
-1374672355 source:f:\c”Ô—‘\mysql_connector\main.c
-	<string.h>
-	<stdlib.h>
-	<stdio.h>
-	<winsock2.h>
-	"mysql.h"
-
