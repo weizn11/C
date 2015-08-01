@@ -1,0 +1,17 @@
+﻿生成启动时间为 2015/8/1 19:50:45。
+     1>项目“E:\VS2013_Projects\大整数计算器\大整数计算器\大整数计算器.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>main.cpp(403): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\conio.h(131) : 参见“getch”的声明
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\VS2013_Projects\大整数计算器\Release\大整数计算器.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\VS2013_Projects\大整数计算器\Release\大整数计算器.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\VS2013_Projects\大整数计算器\Release\大整数计算器.lib" /MACHINE:X86 /SAFESEH Release\main.obj
+         正在生成代码
+         已完成代码的生成
+         大整数计算器.vcxproj -> E:\VS2013_Projects\大整数计算器\Release\大整数计算器.exe
+     1>已完成生成项目“E:\VS2013_Projects\大整数计算器\大整数计算器\大整数计算器.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:03.34
