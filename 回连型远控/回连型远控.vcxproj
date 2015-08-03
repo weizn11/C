@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName />
+    <SccLocalPath />
+    <ProjectGuid>{5ADEA809-690D-49E4-967C-1AEB294C4201}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Release\</OutDir>
+    <IntDir>.\Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>E:\GTK\gtk+-bundle_3.6.4-20130921_win32\include\libcroco-0.6;E:\GTK\gtk+-bundle_3.6.4-20130921_win32\lib\glib-2.0\include;E:\GTK\gtk+-bundle_3.6.4-20130921_win32\lib\libffi-3.0.12\include;E:\GTK\gtk+-bundle_3.6.4-20130921_win32\include;E:\GTK\gtk+-bundle_3.6.4-20130921_win32\include\pixman-1;E:\GTK\gtk+-bundle_3.6.4-20130921_win32\include\pango-1.0;E:\GTK\gtk+-bundle_3.6.4-20130921_win32\include\lzma;E:\GTK\gtk+-bundle_3.6.4-20130921_win32\include\libxml2;E:\GTK\gtk+-bundle_3.6.4-20130921_win32\include\librsvg-2.0;E:\GTK\gtk+-bundle_3.6.4-20130921_win32\include\libpng15;E:\GTK\gtk+-bundle_3.6.4-20130921_win32\include\jasper;E:\GTK\gtk+-bundle_3.6.4-20130921_win32\include\gtk-3.0;E:\GTK\gtk+-bundle_3.6.4-20130921_win32\include\glib-2.0;E:\GTK\gtk+-bundle_3.6.4-20130921_win32\include\gio-win32-2.0;E:\GTK\gtk+-bundle_3.6.4-20130921_win32\include\gdk-pixbuf-2.0;E:\GTK\gtk+-bundle_3.6.4-20130921_win32\include\gail-3.0;E:\GTK\gtk+-bundle_3.6.4-20130921_win32\include\freetype2;E:\GTK\gtk+-bundle_3.6.4-20130921_win32\include\fontconfig;E:\GTK\gtk+-bundle_3.6.4-20130921_win32\include\cairo;E:\GTK\gtk+-bundle_3.6.4-20130921_win32\include\atk-1.0;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\GTK\gtk+-bundle_3.6.4-20130921_win32\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Release\回连型远控.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+    </ClCompile>
+    <Midl>
+      <TypeLibraryName>.\Release\回连型远控.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\回连型远控.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <SubSystem>Console</SubSystem>
+      <OutputFile>.\Release\回连型远控.exe</OutputFile>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;glib-2.0.lib;gdk-win32-2.0.lib;gtk-win32-2.0.lib;gthread-2.0.lib;gobject-2.0.lib;gmodule-2.0.lib;pangowin32-1.0.lib;pangoft2-1.0.lib;pangocairo-1.0.lib;pango-1.0.lib;gtk-win32-3.0.lib;gio-2.0.lib;gdk-win32-3.0.lib;gdk_pixbuf-2.0.lib;gailutil.lib;fontconfig.lib;cairo.lib;atk-1.0.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="clientlist.h" />
+    <ClInclude Include="encoding.h" />
+    <ClInclude Include="fileexplorer.h" />
+    <ClInclude Include="global.h" />
+    <ClInclude Include="gui.h" />
+    <ClInclude Include="rc4.h" />
+    <ClInclude Include="recv.h" />
+    <ClInclude Include="send.h" />
+    <ClInclude Include="shell.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\ico.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
