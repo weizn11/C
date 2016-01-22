@@ -85,3 +85,89 @@
 	<string.h>
 	"stack.h"
 
+1453344454 source:/home/wayne/C_Projects/Linux并发模型/async.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	<netdb.h>
+	<unistd.h>
+	<pthread.h>
+	<sys/epoll.h>
+	"async.h"
+	"recv.h"
+	"mempool.h"
+	"stack.h"
+
+1449154584 /home/wayne/C_Projects/Linux并发模型/async.h
+	<sys/socket.h>
+	<netinet/in.h>
+
+1449154584 /home/wayne/C_Projects/Linux并发模型/recv.h
+
+1453343826 /home/wayne/C_Projects/Linux并发模型/mempool.h
+	<pthread.h>
+	"async.h"
+
+1449154584 /home/wayne/C_Projects/Linux并发模型/stack.h
+	<pthread.h>
+	"async.h"
+	"mempool.h"
+
+1449154584 source:/home/wayne/C_Projects/Linux并发模型/cleanup.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	<netdb.h>
+	<unistd.h>
+	<pthread.h>
+	<sys/epoll.h>
+	"cleanup.h"
+	"async.h"
+	"mempool.h"
+	"stack.h"
+
+1449154584 /home/wayne/C_Projects/Linux并发模型/cleanup.h
+	"async.h"
+
+1449154584 source:/home/wayne/C_Projects/Linux并发模型/main.c
+	<stdio.h>
+	<stdlib.h>
+	"async.h"
+	"mempool.h"
+
+1449154584 source:/home/wayne/C_Projects/Linux并发模型/mempool.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"mempool.h"
+
+1453344371 source:/home/wayne/C_Projects/Linux并发模型/recv.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	<netdb.h>
+	<unistd.h>
+	<pthread.h>
+	<sys/epoll.h>
+	"recv.h"
+	"async.h"
+	"cleanup.h"
+	"mempool.h"
+
+1449154584 source:/home/wayne/C_Projects/Linux并发模型/stack.c
+	<stdlib.h>
+	<string.h>
+	"stack.h"
+

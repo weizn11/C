@@ -17,7 +17,7 @@
 
 extern unsigned long int TotalConnections;
 extern unsigned long int ListenThreads;
-extern pthread_mutex_t MutexIOData;
+extern pthread_rwlock_t LockIOData;
 extern IO_OPERATION_DATA_NODE *IO_Operation_Data_Header;
 
 int recv_data_from_client(IO_OPERATION_DATA *pIOData)
@@ -82,17 +82,17 @@ int listen_socket_from_client(void *Parameter)
                         if(recv_data_from_client(IO_Operation_Node_Pointer->IOArray[j])<=0)
                         {
                             //clean sockset;
-                            pthread_mutex_lock(&MutexIOData);
+                            pthread_rwlock_wrlock(&LockIOData);
                             clean_client_connection(IO_Operation_Node_Pointer,j);
-                            pthread_mutex_unlock(&MutexIOData);
+                            pthread_rwlock_unlock(&LockIOData);
                         }
                     }
                     else
                     {
                         //client disconnect
-                        pthread_mutex_lock(&MutexIOData);
+                        pthread_rwlock_wrlock(&LockIOData);
                         clean_client_connection(IO_Operation_Node_Pointer,j);
-                        pthread_mutex_unlock(&MutexIOData);
+                        pthread_rwlock_unlock(&LockIOData);
                     }
                     break;
                 }

@@ -17,7 +17,7 @@
 
 unsigned long int TotalConnections=0;    //当前连接总数
 unsigned long int ListenThreads=0;       //当前启动监听线程总数
-pthread_mutex_t MutexIOData;            //IO操作互斥锁
+pthread_rwlock_t LockIOData;            //IO操作读写锁
 MEMPOOL_LIST *Mempool_IOData;              //IO_OPERATION_DATA结构内存池描述字
 STACK_INFO Stack_IOData;                    //栈信息结构体
 IO_OPERATION_DATA_NODE *IO_Operation_Data_Header=NULL;
@@ -38,7 +38,7 @@ int listen_client()
     LocalAddress.sin_family=AF_INET;
     LocalAddress.sin_port=htons(LISTEN_PORT);
     LocalAddress.sin_addr.s_addr=INADDR_ANY;
-    pthread_mutex_init(&MutexIOData,NULL);
+    pthread_rwlock_init(&LockIOData,NULL);
     init_stack(&Stack_IOData);              //栈在使用前需要进行初始化操作
 
     if((ListenSocket=socket(AF_INET,SOCK_STREAM,IPPROTO_TCP))==INVALID_SOCKET)
@@ -90,7 +90,7 @@ int listen_client()
         ClientSocket=accept(ListenSocket,(struct sockaddr *)&ClientAddress,&addrLength);
         if(ClientSocket==INVALID_SOCKET) continue;
 
-        pthread_mutex_lock(&MutexIOData);
+        pthread_rwlock_wrlock(&LockIOData);     //write lock
 skip:
         //在栈中弹出一个可用的位置
         if(pop_stack(&Stack_IOData,&IODataInfo)==STACK_EMPTY)
@@ -102,7 +102,7 @@ skip:
             if(IO_Operation_Node_Pointer->next==NULL)
             {
                 //malloc error
-                pthread_mutex_unlock(&MutexIOData);
+                pthread_rwlock_unlock(&LockIOData); //unlock
                 continue;
             }
             memset(IO_Operation_Node_Pointer->next,NULL,sizeof(IO_OPERATION_DATA_NODE));
@@ -125,7 +125,7 @@ skip:
         if(IO_Operation_Node_Pointer->IOArray[index]==NULL)
         {
             //malloc error
-            pthread_mutex_unlock(&MutexIOData);
+            pthread_rwlock_unlock(&LockIOData);     //unlock
             continue;
         }
         memset(IO_Operation_Node_Pointer->IOArray[index],NULL,sizeof(IO_OPERATION_DATA));
@@ -140,7 +140,7 @@ skip:
         if(epoll_ctl(IO_Operation_Node_Pointer->epollfd,EPOLL_CTL_ADD,ClientSocket,&event)!=0)
         {
             //add socket failed
-            pthread_mutex_unlock(&MutexIOData);
+            pthread_rwlock_unlock(&LockIOData);
             continue;
         }
 
@@ -157,7 +157,7 @@ skip:
         }
 
         printf("Client \"%s\" online.TotalConnect:%d\n",inet_ntoa(ClientAddress.sin_addr),TotalConnections);
-        pthread_mutex_unlock(&MutexIOData);
+        pthread_rwlock_unlock(&LockIOData);     //unlock
     }
 
     return 0;
