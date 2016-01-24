@@ -18,10 +18,13 @@ Address:客户端地址
 recvBuffer:指向存放接收到客户端传来数据的内存
 recvSize:当前recvBuffer已接收到的数据长度
 */
+typedef struct _IO_OPERATION_DATA_LIST_NODE_ IO_OPERATION_DATA_NODE;
 typedef struct
 {
     SOCKET Socket;
     struct sockaddr_in Address;
+    int posIndex;
+    IO_OPERATION_DATA_NODE *pIONode;
     char *recvBuffer;
     unsigned long recvSize;
 } IO_OPERATION_DATA;

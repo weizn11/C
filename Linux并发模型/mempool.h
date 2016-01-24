@@ -5,9 +5,6 @@
 
 #include "async.h"
 
-#define IODATA_MEMPOOL_MAXIMUM_CELL 2048     //IO_OPERATION_DATA结构体在内存池中需要申请的数量
-#define STACK_MEMPOOL_MAXIMUM_CELL 2048      //栈元素在内存池中需要申请的数量
-
 typedef IO_OPERATION_DATA MEMPOOL_DATA_TYPE;
 
 typedef struct _MEMPOOL_LIST_

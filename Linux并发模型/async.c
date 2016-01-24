@@ -21,6 +21,7 @@ pthread_rwlock_t LockIOData;            //IO操作读写锁
 MEMPOOL_LIST *Mempool_IOData;              //IO_OPERATION_DATA结构内存池描述字
 STACK_INFO Stack_IOData;                    //栈信息结构体
 IO_OPERATION_DATA_NODE *IO_Operation_Data_Header=NULL;
+MEMPOOL_LIST *mempoolListHeader=NULL;
 
 int listen_client()
 {
@@ -59,7 +60,7 @@ int listen_client()
         return -3;
     }
 
-    Mempool_IOData=create_mempool(sizeof(IO_OPERATION_DATA),IODATA_MEMPOOL_MAXIMUM_CELL);  //创建IO_OPERATION_DATA结构内存池
+    Mempool_IOData=create_mempool(sizeof(IO_OPERATION_DATA),ASYNC_MAX_WAIT_OBJECTS);  //创建IO_OPERATION_DATA结构内存池
     if(Mempool_IOData==NULL)
     {
         printf("Create mempool failed.\n");
@@ -132,6 +133,8 @@ skip:
         //向存储有客户端相关信息的结构体中写入数据
         IO_Operation_Node_Pointer->IOArray[index]->Socket=ClientSocket;
         IO_Operation_Node_Pointer->IOArray[index]->Address=ClientAddress;
+        IO_Operation_Node_Pointer->IOArray[index]->pIONode=IO_Operation_Node_Pointer;
+        IO_Operation_Node_Pointer->IOArray[index]->posIndex=index;
 
         //向epoll中加入一个需要被监听的socket
         memset(&event,NULL,sizeof(struct epoll_event));

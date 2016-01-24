@@ -22,7 +22,7 @@ int push_stack(STACK_INFO *StackInfo,STACK_DATA_TYPE data)
     pthread_mutex_lock(&StackInfo->mutex);
     if(StackInfo->mempool==NULL)
     {
-        StackInfo->mempool=create_mempool(sizeof(STACK_NODE),STACK_MEMPOOL_MAXIMUM_CELL);
+        StackInfo->mempool=create_mempool(sizeof(STACK_NODE),ASYNC_MAX_WAIT_OBJECTS);
         if(StackInfo->mempool==NULL)
         {
             pthread_mutex_unlock(&StackInfo->mutex);

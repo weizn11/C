@@ -19,12 +19,16 @@ extern unsigned long TotalConnections;
 extern MEMPOOL_LIST *Mempool_IOData;
 extern STACK_INFO Stack_IOData;
 
-int clean_client_connection(IO_OPERATION_DATA_NODE *pIONode,int index)
+int clean_client_connection(IO_OPERATION_DATA *pIOData)
 {
     //当客户端断开链结后清理内存中的相关数据
     struct epoll_event event;
     STACK_DATA_TYPE IODataInfo;
+    IO_OPERATION_DATA_NODE *pIONode;
+    int index;
 
+    pIONode=pIOData->pIONode;
+    index=pIOData->posIndex;
     memset(&IODataInfo,NULL,sizeof(STACK_DATA_TYPE));
     memset(&event,NULL,sizeof(struct epoll_event));
 
@@ -37,6 +41,7 @@ int clean_client_connection(IO_OPERATION_DATA_NODE *pIONode,int index)
     //在epoll中删除相关的socket
     event.data.fd=pIONode->IOArray[index]->Socket;
     epoll_ctl(pIONode->epollfd,EPOLL_CTL_DEL,pIONode->IOArray[index]->Socket,&event);
+    close(event.data.fd);
     mempool_free(Mempool_IOData,pIONode->IOArray[index]);       //归还内存池
     Mempool_IOData,pIONode->IOArray[index]=NULL;
     IODataInfo.index=index;

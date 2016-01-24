@@ -83,7 +83,7 @@ int listen_socket_from_client(void *Parameter)
                         {
                             //clean sockset;
                             pthread_rwlock_wrlock(&LockIOData);
-                            clean_client_connection(IO_Operation_Node_Pointer,j);
+                            clean_client_connection(IO_Operation_Node_Pointer->IOArray[j]);
                             pthread_rwlock_unlock(&LockIOData);
                         }
                     }
@@ -91,7 +91,7 @@ int listen_socket_from_client(void *Parameter)
                     {
                         //client disconnect
                         pthread_rwlock_wrlock(&LockIOData);
-                        clean_client_connection(IO_Operation_Node_Pointer,j);
+                        clean_client_connection(IO_Operation_Node_Pointer->IOArray[j]);
                         pthread_rwlock_unlock(&LockIOData);
                     }
                     break;
