@@ -1,0 +1,87 @@
+# depslib dependency file v1.0
+1427802824 source:/home/wayne/Desktop/C_Projects/Linux_Async/async.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	<netdb.h>
+	<unistd.h>
+	<pthread.h>
+	<sys/epoll.h>
+	"async.h"
+	"recv.h"
+	"mempool.h"
+	"stack.h"
+
+1427616536 /home/wayne/Desktop/C_Projects/Linux_Async/async.h
+	<sys/socket.h>
+	<netinet/in.h>
+
+1427472401 source:/home/wayne/Desktop/C_Projects/Linux_Async/main.c
+	<stdio.h>
+	<stdlib.h>
+	"async.h"
+	"mempool.h"
+
+1427263819 /home/wayne/Desktop/C_Projects/Linux_Async/recv.h
+
+1427523955 source:/home/wayne/Desktop/C_Projects/Linux_Async/recv.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	<netdb.h>
+	<unistd.h>
+	<pthread.h>
+	<sys/epoll.h>
+	"recv.h"
+	"async.h"
+	"cleanup.h"
+	"mempool.h"
+
+1427523127 source:/home/wayne/Desktop/C_Projects/Linux_Async/cleanup.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	<netdb.h>
+	<unistd.h>
+	<pthread.h>
+	<sys/epoll.h>
+	"cleanup.h"
+	"async.h"
+	"mempool.h"
+	"stack.h"
+
+1427512008 /home/wayne/Desktop/C_Projects/Linux_Async/cleanup.h
+	"async.h"
+
+1427614211 /home/wayne/Desktop/C_Projects/Linux_Async/mempool.h
+	<pthread.h>
+	"async.h"
+
+1427468194 source:/home/wayne/Desktop/C_Projects/Linux_Async/mempool.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"mempool.h"
+
+1427802824 /home/wayne/Desktop/C_Projects/Linux_Async/stack.h
+	<pthread.h>
+	"async.h"
+	"mempool.h"
+
+1427802824 source:/home/wayne/Desktop/C_Projects/Linux_Async/stack.c
+	<stdlib.h>
+	<string.h>
+	"stack.h"
+

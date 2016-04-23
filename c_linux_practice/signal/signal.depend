@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1437669214 source:/home/wayne/Desktop/C_Projects/signal/main.cpp
+	<iostream>
+	<unistd.h>
+	<signal.h>
+	<stdlib.h>
+

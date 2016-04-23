@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1437965085 source:/home/wayne/Desktop/C_Projects/fifo/main.cpp
+	<iostream>
+	<sys/types.h>
+	<sys/stat.h>
+	<errno.h>
+	<unistd.h>
+	<stdio.h>
+	<fcntl.h>
+	<limits.h>
+	<string.h>
+

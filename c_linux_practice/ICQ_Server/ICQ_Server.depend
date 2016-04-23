@@ -1,0 +1,148 @@
+# depslib dependency file v1.0
+1435415528 source:/home/wayne/Desktop/C_Projects/ICQ_Server/concurrent/async.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	<netdb.h>
+	<unistd.h>
+	<pthread.h>
+	<sys/epoll.h>
+	<dirent.h>
+	"async.h"
+	"recv.h"
+	"mempool.h"
+	"stack.h"
+
+1434897231 /home/wayne/Desktop/C_Projects/ICQ_Server/concurrent/async.h
+	<stdio.h>
+	<sys/socket.h>
+	<netinet/in.h>
+
+1427263819 /home/wayne/Desktop/C_Projects/ICQ_Server/concurrent/recv.h
+
+1427812724 /home/wayne/Desktop/C_Projects/ICQ_Server/concurrent/mempool.h
+	<pthread.h>
+	"async.h"
+
+1427802824 /home/wayne/Desktop/C_Projects/ICQ_Server/concurrent/stack.h
+	<pthread.h>
+	"async.h"
+	"mempool.h"
+
+1432639216 source:/home/wayne/Desktop/C_Projects/ICQ_Server/concurrent/cleanup.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	<netdb.h>
+	<unistd.h>
+	<pthread.h>
+	<sys/epoll.h>
+	"cleanup.h"
+	"async.h"
+	"mempool.h"
+	"stack.h"
+	"../db/db.h"
+
+1427512008 /home/wayne/Desktop/C_Projects/ICQ_Server/concurrent/cleanup.h
+	"async.h"
+
+1427468194 source:/home/wayne/Desktop/C_Projects/ICQ_Server/concurrent/mempool.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"mempool.h"
+
+1435510316 source:/home/wayne/Desktop/C_Projects/ICQ_Server/concurrent/recv.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	<netdb.h>
+	<unistd.h>
+	<pthread.h>
+	<sys/epoll.h>
+	<errno.h>
+	"recv.h"
+	"async.h"
+	"cleanup.h"
+	"mempool.h"
+	"../p2p/p2p.h"
+
+1430905612 /home/wayne/Desktop/C_Projects/ICQ_Server/p2p/p2p.h
+	"../concurrent/async.h"
+
+1427802824 source:/home/wayne/Desktop/C_Projects/ICQ_Server/concurrent/stack.c
+	<stdlib.h>
+	<string.h>
+	"stack.h"
+
+1453042615 source:/home/wayne/Desktop/C_Projects/ICQ_Server/main.c
+	<stdio.h>
+	<stdlib.h>
+	<unistd.h>
+	<sys/stat.h>
+	<pthread.h>
+	<mysql/mysql.h>
+	"p2p/p2p.h"
+	"concurrent/async.h"
+	"db/db.h"
+
+1430907884 source:/home/wayne/Desktop/C_Projects/ICQ_Server/p2p/p2p.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<sys/socket.h>
+	<unistd.h>
+	<time.h>
+	"p2p.h"
+	"../concurrent/async.h"
+
+1448787760 source:/home/wayne/Desktop/C_Projects/ICQ_Server/db/db.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<unistd.h>
+	<mysql/mysql.h>
+	<pthread.h>
+	"db.h"
+	"../concurrent/async.h"
+
+1453042436 /home/wayne/Desktop/C_Projects/ICQ_Server/db/db.h
+	"../concurrent/async.h"
+
+1425025834 /usr/include/mysql/mysql.h
+	<standards.h>
+	<sys/types.h>
+	<winsock2.h>
+	"mysql_version.h"
+	"mysql_com.h"
+	"mysql_time.h"
+	"my_list.h"
+	"typelib.h"
+	"my_alloc.h"
+
+1429544051 /usr/include/mysql/mysql_version.h
+	<custom_conf.h>
+
+1425025834 /usr/include/mysql/mysql_com.h
+
+1425025834 /usr/include/mysql/mysql_time.h
+
+1425025834 /usr/include/mysql/my_list.h
+
+1425025834 /usr/include/mysql/typelib.h
+	"my_alloc.h"
+
+1425025834 /usr/include/mysql/my_alloc.h
+

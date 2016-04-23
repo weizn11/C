@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1437925879 source:/home/wayne/Desktop/C_Projects/pipe/main.cpp
+	<iostream>
+	<stdlib.h>
+	<unistd.h>
+	<sys/stat.h>
+	<sys/types.h>
+	<limits.h>
+	<string.h>
+	<signal.h>
+

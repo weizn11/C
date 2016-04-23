@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="ICQ_Server" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/ICQ_Server" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/ICQ_Server" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="`mysql_config --cflags`" />
+					<Add directory="/usr/include/mysql" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="`mysql_config --libs`" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="concurrent/async.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="concurrent/async.h" />
+		<Unit filename="concurrent/cleanup.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="concurrent/cleanup.h" />
+		<Unit filename="concurrent/memorypool.h" />
+		<Unit filename="concurrent/mempool.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="concurrent/mempool.h" />
+		<Unit filename="concurrent/recv.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="concurrent/recv.h" />
+		<Unit filename="concurrent/stack.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="concurrent/stack.h" />
+		<Unit filename="db/db.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="db/db.h" />
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="p2p/p2p.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="p2p/p2p.h" />
+		<Extensions>
+			<envvars />
+			<code_completion />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

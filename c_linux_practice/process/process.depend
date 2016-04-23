@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1437638823 source:/home/wayne/Desktop/C_Projects/process/main.cpp
+	<iostream>
+	<unistd.h>
+	<pthread.h>
+

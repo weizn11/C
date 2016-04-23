@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1437839361 source:/home/wayne/Desktop/C_Projects/Travseral_Directory/main.cpp
+	<iostream>
+	<stdio.h>
+	<dirent.h>
+	<string.h>
+

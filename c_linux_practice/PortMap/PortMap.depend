@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1428423555 source:/home/wayne/Desktop/C_Projects/PortMap/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	<netdb.h>
+	<unistd.h>
+	<pthread.h>
+	<sys/epoll.h>
+
